@@ -34,7 +34,7 @@ public class PlayerSessionHandler {
 		}
 
 		GUILogin.instance.notLoggedins.put(name, new PlayerInfo(player.posX, player.posY, player.posZ, player.mcServer.getTickCounter(), player.interactionManager.getGameType()));
-		player.setGameType(GameType.SPECTATOR);
+		//player.setGameType(GameType.SPECTATOR);
 
 		/*要求登录*/
 		GUILogin.netWrapper.sendTo(new LoginMessage(new ServerRequestLoginPacket(GUILogin.instance.accountMgr.isRegistered(player.getName()) ? "gl.login.request.login" : "gl.login.request.register")), player);
